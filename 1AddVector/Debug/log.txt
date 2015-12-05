@@ -1,0 +1,5 @@
+use cpu comput finish!
+use total time = 0.291000s
+
+
+use gpu comput fail!

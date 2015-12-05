@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Projects\CUDA\1AddVector\main.cu" />
+    <CustomBuild Include="D:\Projects\CUDA\1AddVector\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="D:\Projects\CUDA\1AddVector\CMakeFiles\1AddVector.dir\$(Configuration)\1AddVector_generated_main.cu.obj">
+      <Filter>Object Files</Filter>
+    </Object>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Object Files">
+      <UniqueIdentifier>{D55FD4F2-4350-3FC2-B193-890A72E11181}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
