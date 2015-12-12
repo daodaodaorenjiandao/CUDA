@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2MemoryAllocate", "2MemoryAllocate.vcxproj", "{50530FB2-6951-33C5-8D6D-A2B07FDF8CA7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		MinSizeRel|Win32 = MinSizeRel|Win32
+		Release|Win32 = Release|Win32
+		RelWithDebInfo|Win32 = RelWithDebInfo|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50530FB2-6951-33C5-8D6D-A2B07FDF8CA7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{50530FB2-6951-33C5-8D6D-A2B07FDF8CA7}.Debug|Win32.Build.0 = Debug|Win32
+		{50530FB2-6951-33C5-8D6D-A2B07FDF8CA7}.MinSizeRel|Win32.ActiveCfg = MinSizeRel|Win32
+		{50530FB2-6951-33C5-8D6D-A2B07FDF8CA7}.MinSizeRel|Win32.Build.0 = MinSizeRel|Win32
+		{50530FB2-6951-33C5-8D6D-A2B07FDF8CA7}.Release|Win32.ActiveCfg = Release|Win32
+		{50530FB2-6951-33C5-8D6D-A2B07FDF8CA7}.Release|Win32.Build.0 = Release|Win32
+		{50530FB2-6951-33C5-8D6D-A2B07FDF8CA7}.RelWithDebInfo|Win32.ActiveCfg = RelWithDebInfo|Win32
+		{50530FB2-6951-33C5-8D6D-A2B07FDF8CA7}.RelWithDebInfo|Win32.Build.0 = RelWithDebInfo|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
