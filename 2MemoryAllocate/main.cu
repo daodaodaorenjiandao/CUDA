@@ -24,17 +24,7 @@ int main()
 	cout << "height: " << height << endl;
 	cout << "pitch: " << pitch << endl;
 
-	//error code:不能在主机上操作设备内存
-
-	/*for (int r = 0; r < height; ++r)
-	{
-	for (int c = 0; c < width; ++c)
-	{
-	float data = *(pDeviceData + pitch * r + c);
-	cout << data << " ";
-	}
-	cout << endl;
-	}*/
+	
 
 	//2 use cudaMalloc3D
 	cudaPitchedPtr pitchPtr;
