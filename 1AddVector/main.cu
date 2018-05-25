@@ -6,14 +6,14 @@
 // For the CUDA runtime routines (prefixed with "cuda_")
 #include <cuda_runtime.h>
 
-//¸Ãº¯ÊıÉùÃ÷ÎªÁË__global__£¬±íÊ¾ÓÉGPUµ÷ÓÃÖ´ĞĞ.
-//Æä¹¦ÄÜÎª½«Êı×épA¡¢pBÖĞ¶ÔÓ¦Î»ÖÃµÄÊı¾İÏà¼Ó£¬²¢½«½á¹û·ÅÈëÊı×épCµÄ¶ÔÓ¦Î»ÖÃÉÏ
-//Ã¿¸öÊı×éµÄË÷Òı´óĞ¡Îªsize
+//è¯¥å‡½æ•°å£°æ˜ä¸ºäº†__global__ï¼Œè¡¨ç¤ºç”±GPUè°ƒç”¨æ‰§è¡Œ.
+//å…¶åŠŸèƒ½ä¸ºå°†æ•°ç»„pAã€pBä¸­å¯¹åº”ä½ç½®çš„æ•°æ®ç›¸åŠ ï¼Œå¹¶å°†ç»“æœæ”¾å…¥æ•°ç»„pCçš„å¯¹åº”ä½ç½®ä¸Š
+//æ¯ä¸ªæ•°ç»„çš„ç´¢å¼•å¤§å°ä¸ºsize
 __global__
 void add(const float * pA, const float * pB, float * pC, unsigned int size)
 {
-	int index = blockIdx.x * blockDim.x + threadIdx.x;		//¼ÆËãµ±Ç°Êı×éÖĞµÄË÷Òı
-	if (index < size)										//È·±£ÊÇÒ»¸öÓĞĞ§µÄË÷Òı
+	int index = blockIdx.x * blockDim.x + threadIdx.x;		//è®¡ç®—å½“å‰æ•°ç»„ä¸­çš„ç´¢å¼•
+	if (index < size)										//ç¡®ä¿æ˜¯ä¸€ä¸ªæœ‰æ•ˆçš„ç´¢å¼•
 		pC[index] = pA[index] + pB[index];
 
 }
@@ -113,7 +113,7 @@ int main()
 
 
 	//copu data from device to host
-	err = cudaMemcpy(pC, pF, numElement, cudaMemcpyDeviceToHost);
+	err = cudaMemcpy(pC, pF, totalSize, cudaMemcpyDeviceToHost);
 	if (err != cudaSuccess)
 	{
 		printf("call cudaMemcpy form pF to pC fail.\n");
@@ -129,12 +129,12 @@ int main()
 		}
 	}
 
-	//ÊÍ·ÅÉè±¸ÉÏµÄÄÚ´æ
+	//é‡Šæ”¾è®¾å¤‡ä¸Šçš„å†…å­˜
 	cudaFree(pD);
 	cudaFree(pE);
 	cudaFree(pF);
 
-	//ÔÚ³ÌĞòÍË³öÇ°£¬µ÷ÓÃ¸Ãº¯ÊıÖØÖÃ¸ÃÉè±¸£¬Ê¹Çı¶¯È¥ÇåÀíÉè±¸×´Ì¬£¬²¢ÇÒÔÚ³ÌĞòÍË³öÇ°ËùÓĞµÄÊı¾İ½«±»Ë¢³ö¡£
+	//åœ¨ç¨‹åºé€€å‡ºå‰ï¼Œè°ƒç”¨è¯¥å‡½æ•°é‡ç½®è¯¥è®¾å¤‡ï¼Œä½¿é©±åŠ¨å»æ¸…ç†è®¾å¤‡çŠ¶æ€ï¼Œå¹¶ä¸”åœ¨ç¨‹åºé€€å‡ºå‰æ‰€æœ‰çš„æ•°æ®å°†è¢«åˆ·å‡ºã€‚
 	err = cudaDeviceReset();
 	if (err != cudaSuccess)
 	{
